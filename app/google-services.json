@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "981130508400",
+    "project_id": "gpr-messenger",
+    "storage_bucket": "gpr-messenger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981130508400:android:974d9d8bf197c016361cb5",
+        "android_client_info": {
+          "package_name": "com.gpr.messenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "981130508400-7bp0k2pc47c5bm58t91a6pd87uov3lhh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk2tO8TEtxXSV6qTz9zd73NTmL6JsOgmA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "981130508400-7bp0k2pc47c5bm58t91a6pd87uov3lhh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
