@@ -23,19 +23,20 @@ public class MainActivity extends AppCompatActivity {
         mBotaoRegistar = findViewById(R.id.botao_registar);
 
         //clique do botao registar
-        mBotaoIniciarSessao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        //clique do botao iniciar sessão
         mBotaoRegistar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //iniciar atividade de registo
                 startActivity(new Intent(MainActivity.this, RegistarActivity.class));
+            }
+        });
+
+        //clique do botao iniciar sessão
+        mBotaoIniciarSessao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //iniciar atividade de inicio de sessao
+                startActivity(new Intent(MainActivity.this, IniciarSessaoActivity.class));
             }
         });
     }

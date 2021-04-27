@@ -13,6 +13,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -28,6 +29,7 @@ public class RegistarActivity extends AppCompatActivity {
 
     EditText mEmailET, mPasswordET;
     Button mFinalizarRegisto;
+    TextView mTemConta;
 
     //barra de progresso enquanto ocorre o registo
     ProgressDialog progressDialog;
@@ -49,6 +51,7 @@ public class RegistarActivity extends AppCompatActivity {
         mEmailET = findViewById(R.id.emailET);
         mPasswordET = findViewById(R.id.passwordET);
         mFinalizarRegisto = findViewById(R.id.botao_finalizar_registo);
+        mTemConta = findViewById(R.id.tem_conta_TV);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -76,6 +79,14 @@ public class RegistarActivity extends AppCompatActivity {
                 else {
                     registarUtilizador(email, password); //registar o utilizador
                 }
+            }
+        });
+
+        //clique no texto de Ja tem conta
+        mTemConta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegistarActivity.this, IniciarSessaoActivity.class));
             }
         });
     }
