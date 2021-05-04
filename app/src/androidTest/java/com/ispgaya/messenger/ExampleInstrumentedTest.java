@@ -1,4 +1,4 @@
-package com.gpr.messenger;
+package com.ispgaya.messenger;
 
 import android.content.Context;
 
