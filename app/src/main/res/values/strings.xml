@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">messenger</string>
+    <string name="app_name">MessageMe</string>
     <string name="title_activity_iniciar_sessao">IniciarSessaoActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
