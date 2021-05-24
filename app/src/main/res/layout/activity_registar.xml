@@ -5,63 +5,152 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegistarActivity"
-    android:padding="20dp">
+    android:background="@color/colorWhite">
 
-    <TextView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="Registar-me"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        />
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:id="@+id/emailTIL">
-        <EditText
-            android:id="@+id/emailET"
-            android:inputType="textEmailAddress"
-            android:hint="Email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:id="@+id/passwordTIL"
-        android:layout_below="@id/emailTIL"
-        app:passwordToggleEnabled="true">
-        <EditText
-            android:id="@+id/passwordET"
-            android:inputType="textPassword"
-            android:hint="Password"
+        app:cardUseCompatPadding="false"
+        app:cardCornerRadius="15dp"
+        android:elevation="4dp"
+        app:cardBackgroundColor="@color/colorWhite"
+        android:layout_margin="15dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="20dp">
 
-    <Button
-        android:text="Finalizar Registo"
-        android:layout_below="@id/passwordTIL"
-        android:id="@+id/botao_finalizar_registo"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Já falta pouco!"
+                android:layout_below="@id/botao_finalizar_inicio_sessao"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"/>
 
-    <TextView
-        android:id="@+id/tem_conta_TV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Já tens conta? Inicia Sessão"
-        android:textAlignment="center"
-        android:layout_below="@id/botao_finalizar_registo"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/black"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                app:boxBackgroundColor="@android:color/transparent"
+                android:background="@android:color/transparent"
+                android:id="@+id/emailTIL">
+                <EditText
+                    android:id="@+id/emailET"
+                    android:inputType="textEmailAddress"
+                    android:hint="Email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/passwordTIL"
+                app:boxBackgroundColor="@android:color/transparent"
+                android:background="@android:color/transparent"
+                android:layout_below="@id/emailTIL"
+                app:passwordToggleEnabled="true"
+                android:layout_marginBottom="10dp">
+                <EditText
+                    android:id="@+id/passwordET"
+                    android:inputType="textPassword"
+                    android:hint="Password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:text="Finalizar Registo"
+                android:layout_below="@id/passwordTIL"
+                android:id="@+id/botao_finalizar_registo"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/bg_ui"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="14sp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"/>
+
+            <TextView
+                android:id="@+id/tem_conta_TV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Já tens conta? Inicia Sessão"
+                android:textAlignment="center"
+                android:layout_below="@id/botao_finalizar_registo"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:id="@+id/circle1A"
+        android:layout_width="134dp"
+        android:layout_height="134dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="-50dp"
+        android:layout_marginLeft="-10dp"
+        android:src="@drawable/circletransparant" />
+
+    <ImageView
+        android:id="@+id/circle4A"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/circletransparant" />
+
+    <ImageView
+        android:id="@+id/circle1"
+        android:layout_width="134dp"
+        android:layout_height="134dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="-80dp"
+        android:layout_marginRight="-100dp"
+        android:src="@drawable/circletransparant" />
+
+    <ImageView
+        android:id="@+id/circle2"
+        android:layout_width="134dp"
+        android:layout_height="134dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="-100dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/circletransparant" />
+
+    <ImageView
+        android:id="@+id/circle3"
+        android:layout_width="182dp"
+        android:layout_height="182dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="-80dp"
+        android:layout_marginBottom="-30dp"
+        android:src="@drawable/circle" />
+
+    <ImageView
+        android:id="@+id/circle4"
+        android:layout_width="134dp"
+        android:layout_height="134dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="-50dp"
+        android:layout_marginBottom="-50dp"
+        android:layout_toLeftOf="@+id/circle3"
+        android:src="@drawable/circletransparant" />
 
 </RelativeLayout>

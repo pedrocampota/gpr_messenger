@@ -7,9 +7,13 @@
 
     <item android:id="@+id/nav_perfil"
         android:title="Perfil"
-        android:icon="@drawable/ic_home_black"/>
+        android:icon="@drawable/ic_profile_black"/>
 
     <item android:id="@+id/nav_utilizadores"
         android:title="Utilizadores"
-        android:icon="@drawable/ic_home_black"/>
+        android:icon="@drawable/ic_users_black"/>
+
+    <item android:id="@+id/nav_chat"
+        android:title="@null"
+        android:icon="@drawable/ic_chat_black"/>
 </menu>

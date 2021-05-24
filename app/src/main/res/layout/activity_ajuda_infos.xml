@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AjudaInfosActivity"
+    android:background="@drawable/bg_ui_thirth">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20sp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="125dp">
+            <ImageView
+                android:id="@+id/logo_main"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:src="@drawable/app_logo_splash_white"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"/>
+            <TextView
+                android:id="@+id/beta_text"
+                android:layout_below="@id/logo_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beta"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorWhite"
+                android:layout_gravity="center_horizontal"/>
+            <TextView
+                android:layout_below="@id/beta_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:text="Versão 1.0"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorWhite"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2021 - GPR - Instituto Superior Politécnico de Gaya"
+                android:textColor="@color/colorWhite"
+                android:textAlignment="center"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

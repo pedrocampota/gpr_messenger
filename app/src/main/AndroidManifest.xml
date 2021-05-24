@@ -12,7 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Messenger">
 
-        <activity android:name=".DashboardActivity">
+        <activity
+            android:name=".AjudaInfosActivity"
+            android:theme="@style/Theme.Messenger.FullScreen"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".AjudaActivity"
+            android:theme="@style/AjudaActivityTheme"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".DashboardActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,9 +32,20 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".RegistarActivity" />
-        <activity android:name=".IniciarSessaoActivity" />
-        <activity android:name=".MainActivity"/>
+        <activity
+            android:name=".RegistarActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".IniciarSessaoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/IniciarSessaoActivityTheme" />
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MainActivityTheme" />
+
     </application>
 
 </manifest>

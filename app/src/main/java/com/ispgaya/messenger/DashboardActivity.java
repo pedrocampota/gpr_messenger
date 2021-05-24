@@ -125,7 +125,10 @@ public class DashboardActivity extends AppCompatActivity {
             firebaseAuth.signOut();
             verificarEstadoUtilizador();
         }
-
+        if (id == R.id.action_ajuda){
+            startActivity(new Intent(this, AjudaActivity.class));
+            verificarEstadoUtilizador();
+        }
         return super.onOptionsItemSelected(item);
     }
 }

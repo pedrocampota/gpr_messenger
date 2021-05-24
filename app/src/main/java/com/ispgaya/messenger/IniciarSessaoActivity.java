@@ -42,10 +42,10 @@ public class IniciarSessaoActivity extends AppCompatActivity {
 
         //Actionbar com titulo
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Iniciar Sessão");
+        //actionBar.setTitle("Iniciar Sessão");
         //ativar botão de voltar atrás
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
+        //actionBar.setDisplayHomeAsUpEnabled(true);
+        //actionBar.setDisplayShowHomeEnabled(true);
 
         mAuth = FirebaseAuth.getInstance();
 
