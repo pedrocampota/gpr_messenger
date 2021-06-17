@@ -27,7 +27,7 @@ import java.util.HashMap;
 
 public class RegistarActivity extends AppCompatActivity {
 
-    EditText mEmailET, mPasswordET;
+    EditText mEmailET, mPasswordET, nomeEt, numTelemovelEt, nomeCursoEt, anoCursoTv, numAlunoTv, idadeTv, generoTv;
     Button mFinalizarRegisto;
     TextView mTemConta;
 
@@ -54,6 +54,14 @@ public class RegistarActivity extends AppCompatActivity {
         mPasswordET = findViewById(R.id.passwordET);
         mFinalizarRegisto = findViewById(R.id.botao_finalizar_registo);
         mTemConta = findViewById(R.id.tem_conta_TV);
+        nomeEt = findViewById(R.id.nomeEtRegistar);
+        numTelemovelEt = findViewById(R.id.numTelemovelEtRegistar);
+        nomeCursoEt = findViewById(R.id.nomeCursoEtRegistar);
+        anoCursoTv = findViewById(R.id.anoCursoEtRegistar);
+        numAlunoTv = findViewById(R.id.numAlunoEtRegistar);
+        idadeTv = findViewById(R.id.idadeEtRegistar);
+        generoTv = findViewById(R.id.generoEtRegistar);
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -67,6 +75,15 @@ public class RegistarActivity extends AppCompatActivity {
                 //input email e password
                 String email = mEmailET.getText().toString().trim();
                 String password = mPasswordET.getText().toString().trim();
+                String nome = nomeEt.getText().toString();
+                String telemovel = numTelemovelEt.getText().toString().trim();
+                String nomeCurso = nomeCursoEt.getText().toString();
+                String anoCurso = anoCursoTv.getText().toString().trim();
+                String numAluno = numAlunoTv.getText().toString().trim();
+                String idade = idadeTv.getText().toString().trim();
+                String genero = generoTv.getText().toString();
+
+
                 //validação
                 if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
                     //surgir erro e focar no email
@@ -78,8 +95,36 @@ public class RegistarActivity extends AppCompatActivity {
                     mPasswordET.setError("A password tem que ter pelo menos 6 caractéres.");
                     mPasswordET.setFocusable(true);
                 }
+                else if (nome.isEmpty()){
+                    nomeEt.setError("Deve ser preenchido o primeiro e último nome");
+                    nomeEt.setFocusable(true);
+                }
+                else if (telemovel.isEmpty()){
+                    numTelemovelEt.setError("Deve ser preenchido o número de telemóvel pessoal");
+                    numTelemovelEt.setFocusable(true);
+                }
+                else if (nomeCurso.isEmpty()){
+                    nomeCursoEt.setError("Deve ser preenchido o nome do curso frequentado");
+                    nomeCursoEt.setFocusable(true);
+                }
+                else if (anoCurso.isEmpty()){
+                    anoCursoTv.setError("Deve ser preenchido o número correspondente ao ano do curso");
+                    anoCursoTv.setFocusable(true);
+                }
+                else if (numAluno.isEmpty()){
+                    numAlunoTv.setError("Deve ser preenchido o número de aluno");
+                    numAlunoTv.setFocusable(true);
+                }
+                else if (idade.isEmpty()){
+                    idadeTv.setError("Deve ser preenchida a idade");
+                    idadeTv.setFocusable(true);
+                }
+                else if (genero.isEmpty()){
+                    generoTv.setError("Deve ser preenchida o género");
+                    generoTv.setFocusable(true);
+                }
                 else {
-                    registarUtilizador(email, password); //registar o utilizador
+                    registarUtilizador(email, password, nome, telemovel, nomeCurso, anoCurso, numAluno, idade, genero); //registar o utilizador
                 }
             }
         });
@@ -93,7 +138,7 @@ public class RegistarActivity extends AppCompatActivity {
         });
     }
 
-    private void registarUtilizador(String email, String password) {
+    private void registarUtilizador(String email, String password, String s, String nome, String telemovel, String nomeCurso, String anoCurso, String numAluno, String genero) {
         //o email e password são válidos, mostrar progress dialog e iniciar sessao
         progressDialog.show();
 
@@ -106,16 +151,40 @@ public class RegistarActivity extends AppCompatActivity {
 
                             FirebaseUser user = mAuth.getCurrentUser();
                             //obter email de utilizador e uid a partir do registo
+                            //String email = user.getEmail();
                             String email = user.getEmail();
                             String uid = user.getUid();
+                            String nome = nomeCursoEt.getText().toString();
+                            String telemovel = nomeCursoEt.getText().toString();
+                            String nomeCurso = nomeCursoEt.getText().toString();
+                            String anoCurso = anoCursoTv.getText().toString();
+                            String numAluno = numAlunoTv.getText().toString();
+                            String idade = idadeTv.getText().toString();
+                            String genero = generoTv.getText().toString();
+
+
                             //quando o utilizador é registado é necessário inserir os dados na base de dados
                             //usamos um hashmap
                             HashMap<Object, String> hashMap = new HashMap<>();
                             hashMap.put("email", email);
                             hashMap.put("uid", uid);
-                            hashMap.put("nome", "");
-                            hashMap.put("telemovel", "");
+                            hashMap.put("nome", nome);
+                            hashMap.put("telemovel",telemovel);
                             hashMap.put("imagem", "");
+                            hashMap.put("capa", "");
+                            hashMap.put("estadoPerfil", "Sou um utilizador do MessageMe");
+                            hashMap.put("nomeCurso", nomeCurso);
+                            hashMap.put("anoCurso", anoCurso);
+                            hashMap.put("numAluno", numAluno);
+                            hashMap.put("idade", idade);
+                            hashMap.put("genero", genero);
+                            hashMap.put("facebook", "");
+                            hashMap.put("twitter", "");
+                            hashMap.put("instagram", "");
+                            hashMap.put("linkedin", "");
+                            hashMap.put("github", "");
+                            hashMap.put("estadoOnline", "Online");
+                            hashMap.put("escreverPara", "ninguem");
                             //firabase instance
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
                             //caminho para a inserção de dados chamado "Utilizadores"

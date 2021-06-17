@@ -89,7 +89,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Perquntas Frequentes"
+                        android:text="Perguntas Frequentes"
                         android:textColor="@color/colorBlack"/>
                 </LinearLayout>
             </LinearLayout>

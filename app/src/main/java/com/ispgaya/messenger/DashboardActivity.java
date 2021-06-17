@@ -1,20 +1,22 @@
 package com.ispgaya.messenger;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.AdapterView;
-import android.widget.TextView;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.ispgaya.messenger.notificacoes.Token;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -22,14 +24,18 @@ public class DashboardActivity extends AppCompatActivity {
 
     ActionBar actionBar;
 
+    String meuUid;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        //Actionbar com titulo
+        //Actionbar e o titulo
         actionBar = getSupportActionBar();
-        actionBar.setTitle("Perfil");
+        this.getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setCustomView(R.layout.app_bar_layout);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -38,11 +44,24 @@ public class DashboardActivity extends AppCompatActivity {
         navigationView.setOnNavigationItemSelectedListener(selectedListener);
 
         //transação de fragmento (default)
-        actionBar.setTitle("Inicio");
-        InicioFragment fragment1 = new InicioFragment();
+        ConversasListaFragment fragment1 = new ConversasListaFragment();
         FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
         ft1.replace(R.id.conteudo, fragment1, "");
         ft1.commit();
+
+        verificarEstadoUtilizador();
+    }
+
+    @Override
+    protected void onResume() {
+        verificarEstadoUtilizador();
+        super.onResume();
+    }
+
+    public void updateToken(String token){
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Tokens");
+        Token mToken = new Token(token);
+        ref.child(meuUid).setValue(mToken);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener selectedListener =
@@ -51,26 +70,26 @@ public class DashboardActivity extends AppCompatActivity {
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     //gerir clique dos botoes
                     switch (item.getItemId()){
-                        case R.id.nav_inicio:
+                        case R.id.nav_conversas:
                             //transação de fragmento
-                            actionBar.setTitle("Inicio");
-                            InicioFragment fragment1 = new InicioFragment();
+                            //actionBar.setTitle("Conversas");
+                            ConversasListaFragment fragment1 = new ConversasListaFragment();
                             FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
                             ft1.replace(R.id.conteudo, fragment1, "");
                             ft1.commit();
                             return true;
-                        case R.id.nav_perfil:
+                        case R.id.nav_utilizadores:
                             //transação de fragmento
-                            actionBar.setTitle("Perfil");
-                            PerfilFragment fragment2 = new PerfilFragment();
+                            // actionBar.setTitle("Utilizadores");
+                            UtilizadoresFragment fragment2 = new UtilizadoresFragment();
                             FragmentTransaction ft2 = getSupportFragmentManager().beginTransaction();
                             ft2.replace(R.id.conteudo, fragment2, "");
                             ft2.commit();
                             return true;
-                        case R.id.nav_utilizadores:
+                        case R.id.nav_perfil:
                             //transação de fragmento
-                            actionBar.setTitle("Utilizadores");
-                            UtilizadoresFragment fragment3 = new UtilizadoresFragment();
+                            //actionBar.setTitle("Perfil");
+                            PerfilFragment fragment3 = new PerfilFragment();
                             FragmentTransaction ft3 = getSupportFragmentManager().beginTransaction();
                             ft3.replace(R.id.conteudo, fragment3, "");
                             ft3.commit();
@@ -84,8 +103,20 @@ public class DashboardActivity extends AppCompatActivity {
     private void verificarEstadoUtilizador(){
         //obter utilizador atual
         FirebaseUser user = firebaseAuth.getCurrentUser();
+
         if (user != null) {
             //utilizador com sessao iniciada
+            meuUid = user.getUid();
+
+            //save uid of currently signed in user in shared preferences
+            SharedPreferences sp = getSharedPreferences("SP_USER", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putString("Current_USERID", meuUid);
+            editor.apply();
+
+
+            //atualizar o token
+            updateToken(FirebaseInstanceId.getInstance().getToken());
         }
         else{
             //utilizador nao esta com a sessao iniciada...ir para a main activity
@@ -105,30 +136,5 @@ public class DashboardActivity extends AppCompatActivity {
         //verificar no inicio da app
         verificarEstadoUtilizador();
         super.onStart();
-    }
-
-    //iniciar menu de opções
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    /*gerir o click nos itens do menu*/
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        int id = item.getItemId();
-        if (id == R.id.action_terminar_sessao){
-            firebaseAuth.signOut();
-            verificarEstadoUtilizador();
-        }
-        if (id == R.id.action_ajuda){
-            startActivity(new Intent(this, AjudaActivity.class));
-            verificarEstadoUtilizador();
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

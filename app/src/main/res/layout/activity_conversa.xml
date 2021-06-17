@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConversaActivity"
+    android:background="#F4F4F4"
+    >
+
+    <!--Recyclerview-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="#1486FF"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <!--foto de perfil do destinatario-->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/perfilIv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_default_utilizador"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/white"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <!--nome do destinatario-->
+            <TextView
+                android:id="@+id/nomeTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nome do Utilizador"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!--estado online e offline do destinatario-->
+            <TextView
+                android:id="@+id/estadoTv"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Online"
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/conversa_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/conversaLayout"/>
+
+    <!--Enviar msg a partir de um editText-->
+    <LinearLayout
+        android:id="@+id/conversaLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <!--Btn para enviar msg-->
+        <ImageButton
+            android:id="@+id/adicionarBtn"
+            android:background="@drawable/circle_button_background"
+            android:foreground="?attr/selectableItemBackground"
+            android:src="@drawable/ic_imagem_white"
+            app:tint="@android:color/white"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            style="?android:attr/borderlessButtonStyle" />
+        <!--edit text: input da mensagem-->
+        <EditText
+            android:id="@+id/mensagemEt"
+            android:layout_weight="1"
+            android:hint="Escreve algo..."
+            android:background="@drawable/input_mensagem_background"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textSize="15sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:maxLines="4"/>
+
+        <!--Btn para enviar a msg-->
+        <ImageButton
+            android:id="@+id/enviarBtn"
+            android:background="@drawable/circle_button_background"
+            android:foreground="?attr/selectableItemBackground"
+            android:src="@drawable/ic_enviar_white"
+            app:tint="@android:color/white"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            style="?android:attr/borderlessButtonStyle"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

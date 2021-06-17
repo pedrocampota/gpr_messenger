@@ -26,7 +26,7 @@ public class AjudaActivity extends AppCompatActivity {
 
     LinearLayout obter_ajuda, pf_ajuda, termos_politica_privacidade_ajuda, infos_ajuda;
 
-    //user info
+    //info dos utilizadores
     String email, uid;
 
     @Override
@@ -36,11 +36,11 @@ public class AjudaActivity extends AppCompatActivity {
 
         actionBar = getSupportActionBar();
         actionBar.setTitle("Ajuda");
-        //enable back button in action bar
+        //ativar o botao de voltar atras na actionbar
         actionBar.setDisplayShowHomeEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        //init
+        //iniciar auth
         firebaseAuth = FirebaseAuth.getInstance();
 
         obter_ajuda = findViewById(R.id.obter_ajuda);
@@ -48,7 +48,7 @@ public class AjudaActivity extends AppCompatActivity {
         termos_politica_privacidade_ajuda = findViewById(R.id.termos_politica_privacidade_ajuda);
         infos_ajuda = findViewById(R.id.infos_ajuda);
 
-        //handle terms get_help text view click
+        //clique no obter ajuda
         obter_ajuda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +56,7 @@ public class AjudaActivity extends AppCompatActivity {
             }
         });
 
-        //handle terms fqa_help text view click
+        //clique no perguntas frequentes
         pf_ajuda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +64,7 @@ public class AjudaActivity extends AppCompatActivity {
             }
         });
 
-        //handle terms text view click
+        //clique nos termos e privacidade
         termos_politica_privacidade_ajuda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +72,7 @@ public class AjudaActivity extends AppCompatActivity {
             }
         });
 
+        //clique na mais info
         infos_ajuda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,7 +95,7 @@ public class AjudaActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        onBackPressed(); //go to previous activity
+        onBackPressed(); //ir para a activity anterior
 
         return super.onSupportNavigateUp();
     }

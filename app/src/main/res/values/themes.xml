@@ -41,6 +41,27 @@
         <item name="android:navigationBarColor">@color/colorWhite</item>
     </style>
 
+    <style name="PerfilUtilizadorActivityTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorWhite</item>
+        <item name="colorPrimaryDark">#CACACA</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor">#F8F8F8</item>
+    </style>
+
+    <style name="ConversaActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor">#EEEEEE</item>
+    </style>
+
+    <style name="VerImagemEnviadaActivityTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@android:color/transparent</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="colorPrimaryDark">@color/colorBlack</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
     <style name="Theme.Messenger.FullScreen">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
