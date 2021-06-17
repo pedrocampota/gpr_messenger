@@ -169,7 +169,7 @@ public class ConversasListaFragment extends Fragment {
     }
 
     private void verificarEstadoUtilizador(){
-        //obter utilizador atual
+        //obter utilizador atual connectado
         FirebaseUser user = firebaseAuth.getCurrentUser();
         if (user !=null){
             //o utilizador está com login efetuado
