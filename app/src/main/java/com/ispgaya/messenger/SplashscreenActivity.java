@@ -22,8 +22,8 @@ public class SplashscreenActivity extends Activity
 {
     private ViewSwitcher viewSwitcher;
     private static int SPLASH_SCREEN = 5000;
-    Animation bannerAnim, nameAnim;
-    ImageView banner,name;
+    Animation nameAnim;
+    ImageView name;
 
     /** Called when the activity is first created. */
     @Override
@@ -34,14 +34,12 @@ public class SplashscreenActivity extends Activity
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-
-        bannerAnim = AnimationUtils.loadAnimation(this, R.anim.banner_animation);
         nameAnim = AnimationUtils.loadAnimation(this, R.anim.name_animation);
 
-        banner = findViewById(R.id.imageView3);
+
         name = findViewById(R.id.imageView);
 
-        banner.setAnimation(bannerAnim);
+
         name.setAnimation(nameAnim);
 
 

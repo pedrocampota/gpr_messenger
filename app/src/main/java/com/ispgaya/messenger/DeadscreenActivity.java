@@ -20,12 +20,15 @@ import android.widget.ViewSwitcher;
 
 public class DeadscreenActivity extends Activity {
     private Button refresh;
+    ImageView imageview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_deadscreen);
+
+        imageview = findViewById(R.id.imageView2);
 
         refresh = (Button) findViewById(R.id.button_refresh);
         refresh.setOnClickListener(new View.OnClickListener() {
