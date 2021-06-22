@@ -154,8 +154,8 @@ public class RegistarActivity extends AppCompatActivity {
                             //String email = user.getEmail();
                             String email = user.getEmail();
                             String uid = user.getUid();
-                            String nome = nomeCursoEt.getText().toString();
-                            String telemovel = nomeCursoEt.getText().toString();
+                            String nome = nomeEt.getText().toString();
+                            String telemovel = numTelemovelEt.getText().toString();
                             String nomeCurso = nomeCursoEt.getText().toString();
                             String anoCurso = anoCursoTv.getText().toString();
                             String numAluno = numAlunoTv.getText().toString();

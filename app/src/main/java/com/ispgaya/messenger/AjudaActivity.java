@@ -24,7 +24,7 @@ public class AjudaActivity extends AppCompatActivity {
 
     ActionBar actionBar;
 
-    LinearLayout obter_ajuda, pf_ajuda, termos_politica_privacidade_ajuda, infos_ajuda;
+    LinearLayout obter_ajuda, pf_ajuda, termos_politica_privacidade_ajuda, infos_ajuda, infos_conexao;
 
     //info dos utilizadores
     String email, uid;
@@ -46,6 +46,7 @@ public class AjudaActivity extends AppCompatActivity {
         obter_ajuda = findViewById(R.id.obter_ajuda);
         pf_ajuda = findViewById(R.id.pf_ajuda);
         termos_politica_privacidade_ajuda = findViewById(R.id.termos_politica_privacidade_ajuda);
+        infos_conexao = findViewById(R.id.infos_conexao);
         infos_ajuda = findViewById(R.id.infos_ajuda);
 
         //clique no obter ajuda
@@ -72,6 +73,14 @@ public class AjudaActivity extends AppCompatActivity {
             }
         });
 
+        //clique nos informações de conectividade
+        infos_conexao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AjudaActivity.this, InformacoesConexao.class));
+            }
+        });
+
         //clique na mais info
         infos_ajuda.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +97,7 @@ public class AjudaActivity extends AppCompatActivity {
             uid = user.getUid();
         }
         else {
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, IniciarSessaoActivity.class));
             finish();
         }
     }

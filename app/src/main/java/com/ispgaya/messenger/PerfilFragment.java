@@ -299,7 +299,7 @@ public class PerfilFragment extends Fragment {
             uid = user.getUid();
         }
         else {
-            startActivity(new Intent(getActivity(), MainActivity.class));
+            startActivity(new Intent(getActivity(), IniciarSessaoActivity.class));
             getActivity().finish();
         }
     }

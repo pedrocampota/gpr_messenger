@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AjudaActivity"
-    >
+    tools:context=".InformacoesConexao">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:orientation="vertical">
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        >
         <androidx.cardview.widget.CardView
             android:layout_weight="1"
             android:layout_width="match_parent"
@@ -22,36 +22,152 @@
             app:cardBackgroundColor="@color/colorWhite">
 
             <LinearLayout
-                android:id="@+id/obter_ajuda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="?android:selectableItemBackground">
                 <RelativeLayout
-                    android:layout_width="80dp"
+                    android:layout_width="10dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_ui_second_1"
+                    android:background="@color/colorAccent"
                     android:gravity="center">
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/ic_obter_ajuda_white"
-                        />
                 </RelativeLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:padding="20dp">
+                    android:padding="15dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Obter Ajuda"
-                        android:textColor="@color/colorBlack"/>
+                        android:text="SSID"
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginBottom="5dp"/>
+                    <TextView
+                        android:id="@+id/ssidTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SSID da rede."/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="15dp"
+            android:elevation="3dp"
+            app:cardBackgroundColor="@color/colorWhite">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="?android:selectableItemBackground">
+                <RelativeLayout
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorAccent"
+                    android:gravity="center">
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="15dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Entra em contacto connosco"/>
+                        android:text="Endereço IP"
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginBottom="5dp"/>
+                    <TextView
+                        android:id="@+id/ipTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ip da rede."/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="15dp"
+            android:elevation="3dp"
+            app:cardBackgroundColor="@color/colorWhite">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="?android:selectableItemBackground">
+                <RelativeLayout
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorAccent"
+                    android:gravity="center">
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Máscara de MAC"
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginBottom="5dp"/>
+                    <TextView
+                        android:id="@+id/macAddressTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mac da rede."/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardUseCompatPadding="true"
+            app:cardCornerRadius="15dp"
+            android:elevation="3dp"
+            app:cardBackgroundColor="@color/colorWhite">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="?android:selectableItemBackground">
+                <RelativeLayout
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorAccent"
+                    android:gravity="center">
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Frequência"
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginBottom="5dp"/>
+                    <TextView
+                        android:id="@+id/freqTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Frequência da rede."/>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -63,154 +179,44 @@
             app:cardCornerRadius="15dp"
             android:elevation="3dp"
             app:cardBackgroundColor="@color/colorWhite">
+
             <LinearLayout
-                android:id="@+id/pf_ajuda"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="?android:selectableItemBackground">
                 <RelativeLayout
-                    android:layout_width="80dp"
+                    android:layout_width="10dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_ui_second_1"
+                    android:background="@color/colorAccent"
                     android:gravity="center">
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/ic_perguntas_frequentes_white"
-                        />
                 </RelativeLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:padding="20dp"
-                    android:gravity="center_vertical">
+                    android:padding="15dp">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Perguntas Frequentes"
-                        android:textColor="@color/colorBlack"/>
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardUseCompatPadding="true"
-            app:cardCornerRadius="15dp"
-            android:elevation="3dp"
-            app:cardBackgroundColor="@color/colorWhite">
-            <LinearLayout
-                android:id="@+id/termos_politica_privacidade_ajuda"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:orientation="horizontal"
-                android:background="?android:selectableItemBackground">
-                <RelativeLayout
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_ui_second_1"
-                    android:gravity="center">
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/ic_termos_politica_privacidade_white"
-                        />
-                </RelativeLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="20dp"
-                    android:gravity="center_vertical">
+                        android:text="Velocidade"
+                        android:textColor="@color/colorBlack"
+                        android:layout_marginBottom="5dp"/>
                     <TextView
+                        android:id="@+id/velocidadeTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Termos e Politica de Privacidade"
-                        android:textColor="@color/colorBlack"/>
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardUseCompatPadding="true"
-            app:cardCornerRadius="15dp"
-            android:elevation="3dp"
-            app:cardBackgroundColor="@color/colorWhite">
-            <LinearLayout
-                android:id="@+id/infos_conexao"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:orientation="horizontal"
-                android:background="?android:selectableItemBackground">
-                <RelativeLayout
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_ui_second_1"
-                    android:gravity="center">
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/ic_wifi_white"
-                        />
-                </RelativeLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="20dp"
-                    android:gravity="center_vertical">
+                        android:text="Download."
+                        android:layout_marginBottom="5dp"/>
                     <TextView
+                        android:id="@+id/velocidadeTv2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Informações de Conectividade"
-                        android:textColor="@color/colorBlack"/>
+                        android:text="Upload."/>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardUseCompatPadding="true"
-            app:cardCornerRadius="15dp"
-            android:elevation="3dp"
-            app:cardBackgroundColor="@color/colorWhite">
-            <LinearLayout
-                android:id="@+id/infos_ajuda"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:orientation="horizontal"
-                android:background="?android:selectableItemBackground">
-                <RelativeLayout
-                    android:layout_width="80dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_ui_second_1"
-                    android:gravity="center">
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/ic_informacoes_white"
-                        />
-                </RelativeLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:padding="20dp"
-                    android:gravity="center_vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Informações"
-                        android:textColor="@color/colorBlack"/>
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
 
 </RelativeLayout>

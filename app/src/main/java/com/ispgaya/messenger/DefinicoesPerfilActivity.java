@@ -474,7 +474,7 @@ public class DefinicoesPerfilActivity extends AppCompatActivity {
         }
         else {
             //o utilizador nao tem sessao inciada portanto voltar para a mainactivity
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, IniciarSessaoActivity.class));
             finish();
         }
     }

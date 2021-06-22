@@ -176,7 +176,7 @@ public class ConversasListaFragment extends Fragment {
         }
         else {
             //o utilizador nao tem sessoa iniciada ir para a main activity
-            startActivity(new Intent(getActivity(), MainActivity.class));
+            startActivity(new Intent(getActivity(), IniciarSessaoActivity.class));
             getActivity().finish();
         }
     }

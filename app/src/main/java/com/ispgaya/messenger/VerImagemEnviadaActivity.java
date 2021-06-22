@@ -67,7 +67,7 @@ public class VerImagemEnviadaActivity extends AppCompatActivity {
         }
         else {
             //utilizador nao conectacto, ir para a main activity
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, IniciarSessaoActivity.class));
             finish();
         }
     }

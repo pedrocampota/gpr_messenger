@@ -105,8 +105,9 @@ public class IniciarSessaoActivity extends AppCompatActivity {
         mEmailET.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
         mEmailET.setMinEms(16);
 
+        builder.setTitle("Recuperar palavra-passe");
         linearLayout.addView(mEmailET);
-        linearLayout.setPadding(10,10,10,10);
+        linearLayout.setPadding(50,50,50,50);
 
         builder.setView(linearLayout);
 
@@ -126,8 +127,7 @@ public class IniciarSessaoActivity extends AppCompatActivity {
             }
         });
 
-        builder
-                .create().show();
+        builder.create().show();
     }
 
     private void iniciarProcessoRecupararPassword(String email) {

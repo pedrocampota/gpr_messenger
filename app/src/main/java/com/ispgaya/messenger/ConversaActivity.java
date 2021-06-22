@@ -700,7 +700,7 @@ public class ConversaActivity extends AppCompatActivity {
         }
         else {
             //o utilizador nao tem sessao iniciada portanto ir para main activity
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, IniciarSessaoActivity.class));
             finish();
         }
     }

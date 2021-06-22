@@ -181,7 +181,7 @@ public class UtilizadoresFragment extends Fragment {
         }
         else {
             //utilizador nao esta conectado, ir para a main activity
-            startActivity(new Intent(getActivity(), MainActivity.class));
+            startActivity(new Intent(getActivity(), IniciarSessaoActivity.class));
             getActivity().finish();
         }
     }

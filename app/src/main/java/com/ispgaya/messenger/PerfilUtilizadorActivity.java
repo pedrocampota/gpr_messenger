@@ -236,7 +236,7 @@ public class PerfilUtilizadorActivity extends AppCompatActivity {
         }
         else {
             // utilizador não conectado, vá para a atividade principal
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, IniciarSessaoActivity.class));
             finish();
         }
     }

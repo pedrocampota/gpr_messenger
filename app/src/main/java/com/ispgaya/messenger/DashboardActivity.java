@@ -120,7 +120,7 @@ public class DashboardActivity extends AppCompatActivity {
         }
         else{
             //utilizador nao esta com a sessao iniciada...ir para a main activity
-            startActivity(new Intent(DashboardActivity.this, MainActivity.class));
+            startActivity(new Intent(DashboardActivity.this, IniciarSessaoActivity.class));
             finish();
         }
     }
